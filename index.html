@@ -1,147 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BusApp Profile</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>عن الموقع — معلومات التواصل</title>
 
-<style>
-  :root {
-    --primary: #FCCC10;        /* الأصفر الأساسي */
-    --primary-light: #FFFAE7;
-    --primary-dark: #B3910B;
-    --bg-dark: #1F1F1F;
-    --card: #FFFFFF;
-    --text: #333;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FFFAE7;
+      --card:#ffffff;
+      --text:#1F1F1F;
+      --accent:#FCCC10;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.6);
+    }
+    [data-theme="dark"]{
+      --bg:#1F1F1F;
+      --card:#2A2A2A;
+      --text:#FFF6D6;
+      --accent:#FCCC10;
+      --muted:#C9B458;
+      --glass: rgba(255,255,255,0.05);
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #1F1F1F, #2B2B2B);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      padding:32px;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(252,204,16,0.18), transparent),
+        linear-gradient(180deg,var(--bg), #fff 60%);
+      font-family:"Cairo";
+      color:var(--text);
+      transition:background .4s,color .3s;
+      direction:rtl;
+    }
 
-  .profile-card {
-    background: var(--card);
-    width: 90%;
-    max-width: 420px;
-    border-radius: 24px;
-    padding: 35px 30px;
-    text-align: center;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-  }
+    .container{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:24px;}
+    header{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .brand{display:flex;gap:14px;align-items:center;}
+    .avatar{
+      width:72px;height:72px;border-radius:16px;
+      background:linear-gradient(135deg,var(--accent), #B3910B);
+      display:grid;place-items:center;color:#1F1F1F;font-weight:900;font-size:22px;
+    }
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px}
+    .btn{border:0;padding:8px 12px;border-radius:10px;background:var(--accent);color:#1F1F1F;font-weight:800;cursor:pointer;}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(0,0,0,0.1)}
 
-  .logo {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 38px;
-    color: #1F1F1F;
-    margin: 0 auto 18px;
-    font-weight: bold;
-  }
+    main{
+      background:linear-gradient(180deg,var(--glass),transparent);
+      padding:22px;border-radius:16px;
+    }
 
-  h1 {
-    margin: 0;
-    color: var(--bg-dark);
-    font-size: 26px;
-  }
+    .tagline{font-size:20px;font-weight:800;margin:0 0 8px}
+    .typing{color:var(--accent);font-weight:900}
+    p.lead{margin:0;color:var(--muted);line-height:1.7;font-size:15px;}
 
-  .subtitle {
-    font-size: 14px;
-    color: var(--text);
-    margin: 6px 0 22px;
-    opacity: 0.8;
-  }
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px;}
+    .card{background:var(--card);padding:14px;border-radius:12px;transition:.25s;}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.12);}
+    .card h3{margin:0 0 8px;font-size:15px;color:#B3910B}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
 
-  .info {
-    text-align: left;
-    margin-top: 20px;
-  }
+    aside{display:flex;flex-direction:column;gap:12px;}
+    .profile{background:linear-gradient(180deg,var(--card),transparent);padding:16px;border-radius:14px;}
+    .meta{display:flex;gap:12px;align-items:center}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .skill{background:rgba(252,204,16,0.25);padding:6px 10px;border-radius:999px;font-size:13px;color:#B3910B;font-weight:800}
+    footer{grid-column:1/-1;margin-top:18px;color:var(--muted);font-size:13px}
 
-  .info p {
-    margin: 10px 0;
-    font-size: 15px;
-    color: var(--text);
-  }
-
-  .label {
-    font-weight: 600;
-    color: var(--primary-dark);
-  }
-
-  .actions {
-    margin-top: 28px;
-    display: flex;
-    gap: 12px;
-  }
-
-  .btn {
-    flex: 1;
-    padding: 12px;
-    border-radius: 14px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    text-align: center;
-    transition: 0.2s ease;
-  }
-
-  .btn.primary {
-    background: var(--primary);
-    color: #1F1F1F;
-  }
-
-  .btn.secondary {
-    background: var(--primary-light);
-    color: var(--primary-dark);
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
-
-  footer {
-    margin-top: 22px;
-    font-size: 12px;
-    opacity: 0.5;
-    color: var(--text);
-  }
-</style>
+    @media (max-width:900px){.container{grid-template-columns:1fr;}}
+  </style>
 </head>
 
-<body>
+<body data-theme="light">
 
-<div class="profile-card">
-  <div class="logo">🚌</div>
+<div class="container">
 
-  <h1>BusApp</h1>
-  <div class="subtitle">Smart Transportation Solution</div>
+  <header>
+    <div class="brand">
+      <div class="avatar">📍</div>
+      <div>
+        <h1>معلومات الموقع والتواصل</h1>
+        <div class="sub">صفحة تعريفية رسمية</div>
+      </div>
+    </div>
+    <button class="btn secondary" id="toggle-theme">تبديل الثيم</button>
+  </header>
 
-  <div class="info">
-    <p><span class="label">Developer:</span> Khairiah Alayyafi</p>
-    <p><span class="label">Version:</span> 1.0.0</p>
-    <p><span class="label">Users:</span> Passengers & Drivers</p>
-  </div>
+  <main>
+    <div class="tagline">نرحب بكم في <span class="typing" id="typing-area">موقعنا</span></div>
+    <p class="lead">
+      هذه الصفحة مخصصة لتوضيح معلومات الموقع ووسائل التواصل الرسمية.
+      نحرص على الشفافية، وحماية الخصوصية، وتقديم تجربة واضحة وآمنة لجميع الزوار.
+    </p>
 
-  <div class="actions">
-    <a href="privacy.html" class="btn primary">Privacy Policy</a>
-    <a href="support.html" class="btn secondary">Support</a>
-  </div>
+    <div class="cards">
+      <div class="card">
+        <h3>📍 الموقع</h3>
+        <p>المملكة العربية السعودية</p>
+      </div>
+      <div class="card">
+        <h3>📞 رقم التواصل</h3>
+        <p>0545401699</p>
+      </div>
+      <div class="card">
+        <h3>🔒 سياسة الخصوصية</h3>
+        <p>نحترم خصوصيتك ولا نقوم بجمع أو مشاركة أي بيانات شخصية دون إذنك.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ الأمان</h3>
+        <p>جميع وسائل التواصل تتم بشكل مباشر وآمن دون وسطاء.</p>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <div class="profile">
+      <div class="meta">
+        <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#B3910B);display:grid;place-items:center;font-weight:900;">☎️</div>
+        <div>
+          <div class="name">التواصل المباشر</div>
+          <div class="sub">دعم واستفسارات</div>
+        </div>
+      </div>
+      <div class="skills">
+        <div class="skill">وضوح</div>
+        <div class="skill">خصوصية</div>
+        <div class="skill">موثوقية</div>
+        <div class="skill">أمان</div>
+      </div>
+    </div>
+  </aside>
 
   <footer>
-    © 2025 BusApp
+    © 2025 — جميع الحقوق محفوظة | هذه الصفحة توضح معلومات الموقع وسياسة الخصوصية
   </footer>
+
 </div>
+
+<script>
+  const words=["موقعنا","التواصل معنا","سياسة الخصوصية"];
+  let i=0;
+  const el=document.getElementById("typing-area");
+  setInterval(()=>{el.textContent=words[i++%words.length];},1400);
+
+  document.getElementById('toggle-theme').onclick=()=>{
+    document.body.dataset.theme=
+      document.body.dataset.theme==="dark"?"light":"dark";
+  }
+</script>
 
 </body>
 </html>

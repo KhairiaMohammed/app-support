@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>عن الموقع — معلومات التواصل</title>
+  <title>عن التطبيق — معلومات التواصل</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
@@ -71,7 +71,19 @@
     .meta{display:flex;gap:12px;align-items:center}
     .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .skill{background:rgba(252,204,16,0.25);padding:6px 10px;border-radius:999px;font-size:13px;color:#B3910B;font-weight:800}
-    footer{grid-column:1/-1;margin-top:18px;color:var(--muted);font-size:13px}
+    
+    footer{
+      grid-column:1/-1;
+      margin-top:24px;
+      padding:16px;
+      background:var(--card);
+      border-radius:12px;
+      color:var(--text);
+      font-size:14px;
+      line-height:1.6;
+    }
+    footer h3{margin:0 0 8px;color:#B3910B}
+    footer a{color:var(--accent);text-decoration:none}
 
     @media (max-width:900px){.container{grid-template-columns:1fr;}}
   </style>
@@ -83,9 +95,9 @@
 
   <header>
     <div class="brand">
-      <div class="avatar">📍</div>
+      <div class="avatar">🚌</div>
       <div>
-        <h1>معلومات الموقع والتواصل</h1>
+        <h1>معلومات التطبيق والتواصل</h1>
         <div class="sub">صفحة تعريفية رسمية</div>
       </div>
     </div>
@@ -93,10 +105,12 @@
   </header>
 
   <main>
-    <div class="tagline">نرحب بكم في <span class="typing" id="typing-area">موقعنا</span></div>
+    <div class="tagline">نرحب بكم في <span class="typing" id="typing-area">تطبيق الباصات</span></div>
     <p class="lead">
-      هذه الصفحة مخصصة لتوضيح معلومات الموقع ووسائل التواصل الرسمية.
-      نحرص على الشفافية، وحماية الخصوصية، وتقديم تجربة واضحة وآمنة لجميع الزوار.
+      تطبيق الباصات هو الحل الأمثل للتنقل السلس والآمن داخل المملكة. يوفر التطبيق تتبع مباشر للباصات، 
+      جداول دقيقة، إشعارات عند اقتراب الباص من موقعك، وحجز مقاعد بطريقة سهلة وآمنة. 
+      نحرص على تقديم تجربة مستخدم ممتعة، مع الالتزام بالخصوصية وحماية بيانات المستخدمين.
+      كما يتيح التطبيق إمكانية الدفع الإلكتروني ومتابعة مسار الباص في الوقت الفعلي، لضمان وصولك في الوقت المحدد.
     </p>
 
     <div class="cards">
@@ -109,12 +123,12 @@
         <p>0545401699</p>
       </div>
       <div class="card">
-        <h3>🔒 سياسة الخصوصية</h3>
-        <p>نحترم خصوصيتك ولا نقوم بجمع أو مشاركة أي بيانات شخصية دون إذنك.</p>
+        <h3>✉️ البريد الإلكتروني</h3>
+        <p>info@busapp.com</p>
       </div>
       <div class="card">
-        <h3>🛡️ الأمان</h3>
-        <p>جميع وسائل التواصل تتم بشكل مباشر وآمن دون وسطاء.</p>
+        <h3>🔒 سياسة الخصوصية</h3>
+        <p>نحترم خصوصيتك ولا نقوم بجمع أو مشاركة أي بيانات شخصية دون إذنك.</p>
       </div>
     </div>
   </main>
@@ -125,7 +139,7 @@
         <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#B3910B);display:grid;place-items:center;font-weight:900;">☎️</div>
         <div>
           <div class="name">التواصل المباشر</div>
-          <div class="sub">دعم واستفسارات</div>
+          <div class="sub">دعم واستفسارات التطبيق</div>
         </div>
       </div>
       <div class="skills">
@@ -133,18 +147,24 @@
         <div class="skill">خصوصية</div>
         <div class="skill">موثوقية</div>
         <div class="skill">أمان</div>
+        <div class="skill">دقة</div>
+        <div class="skill">راحة</div>
       </div>
     </div>
   </aside>
 
   <footer>
-    © 2025 — جميع الحقوق محفوظة | هذه الصفحة توضح معلومات الموقع وسياسة الخصوصية
+    <h3>تواصل معنا</h3>
+    <p>📞 الهاتف: 0545401699</p>
+    <p>📧 البريد الإلكتروني: <a href="mailto:info@busapp.com">info@busapp.com</a></p>
+    <p>🏢 العنوان: المملكة العربية السعودية</p>
+    <p>© 2025 — جميع الحقوق محفوظة | تطبيق الباصات يضمن الخصوصية والأمان لجميع المستخدمين</p>
   </footer>
 
 </div>
 
 <script>
-  const words=["موقعنا","التواصل معنا","سياسة الخصوصية"];
+  const words=["تطبيق الباصات","التواصل معنا","سياسة الخصوصية"];
   let i=0;
   const el=document.getElementById("typing-area");
   setInterval(()=>{el.textContent=words[i++%words.length];},1400);

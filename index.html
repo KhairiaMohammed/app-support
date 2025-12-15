@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BusApp Support</title>
+
   <style>
-    /* ألوان ثانوية مودرن */
+    /* ألوان مناسبة لتطبيق باص */
     :root {
-      --primary-color: #FCCC10;
-      --primary-light: #FFFAE7;
-      --primary-dark: #B3910B;
+      --primary-color: #0D6EFD;   /* أزرق */
+      --primary-light: #EAF3FF;
+      --primary-dark: #084298;
+      --accent-color: #20C997;   /* أخضر */
       --text-color: #333;
       --bg-color: #fff;
     }
@@ -27,12 +29,12 @@
 
     .container {
       background-color: var(--bg-color);
-      max-width: 700px;
+      max-width: 720px;
       width: 90%;
       margin: 40px auto;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       transition: transform 0.2s ease;
     }
 
@@ -43,66 +45,114 @@
     h1 {
       color: var(--primary-dark);
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-color);
+      margin-bottom: 25px;
+      font-size: 15px;
+      opacity: 0.8;
     }
 
     h3 {
       color: var(--primary-color);
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     p {
       color: var(--text-color);
-      line-height: 1.6;
+      line-height: 1.7;
+      margin: 6px 0;
     }
 
     a {
       color: var(--primary-dark);
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.2s ease;
     }
 
     a:hover {
-      color: var(--primary-color);
+      color: var(--accent-color);
     }
 
     .button {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 22px;
       background-color: var(--primary-color);
       color: #fff;
-      border-radius: 8px;
-      margin-top: 10px;
+      border-radius: 10px;
+      margin-top: 12px;
       text-decoration: none;
       transition: background 0.2s ease;
+    }
+
+    .button.secondary {
+      background-color: var(--accent-color);
     }
 
     .button:hover {
       background-color: var(--primary-dark);
     }
+
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin: 25px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 30px;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
+
     <h1>BusApp Support</h1>
+    <div class="subtitle">We’re here to help you move safely and smoothly 🚌</div>
 
     <p>
-      Thank you for using BusApp. If you need help or have any questions,
-      please contact us using the information below.
+      Thank you for using <strong>BusApp</strong>.
+      If you face any issues or have questions, our support team is ready to assist you.
     </p>
 
-    <h3>Contact</h3>
+    <div class="divider"></div>
+
+    <h3>Contact Support</h3>
     <p>Email: <a href="mailto:khairiahalayyafi@gmail.com">khairiahalayyafi@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/966XXXXXXXXX">+966 XXXXXXXXX</a></p>
+    <p>Emergency Line: <strong>9200XXXX</strong></p>
+
+    <h3>Support Hours</h3>
+    <p>Sunday – Thursday: 8:00 AM – 6:00 PM</p>
+
+    <h3>User Type</h3>
+    <p>• Passenger</p>
+    <p>• Driver</p>
 
     <h3>Developer</h3>
     <p>Khairiah Alayyafi</p>
 
     <h3>App Version</h3>
-    <p>1.0</p>
+    <p>1.0.0</p>
 
     <h3>Privacy Policy</h3>
-    <p><a class="button" href="privacy.html">View Privacy Policy</a></p>
+    <a class="button" href="privacy.html">View Privacy Policy</a>
+
+    <h3>Download App</h3>
+    <a class="button secondary" href="#">Google Play</a>
+    <a class="button secondary" href="#">App Store</a>
+
+    <footer>
+      © 2025 BusApp — Safe Rides, Smart Routes
+    </footer>
+
   </div>
 </body>
 </html>

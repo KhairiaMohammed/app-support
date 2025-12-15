@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusApp Support</title>
+  <style>
+    /* ألوان ثانوية مودرن */
+    :root {
+      --primary-color: #FCCC10;
+      --primary-light: #FFFAE7;
+      --primary-dark: #B3910B;
+      --text-color: #333;
+      --bg-color: #fff;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--primary-light);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: var(--bg-color);
+      max-width: 700px;
+      width: 90%;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      color: var(--primary-dark);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      margin-top: 20px;
+    }
+
+    p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary-color);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 8px;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BusApp Support</h1>
+
+    <p>
+      Thank you for using BusApp. If you need help or have any questions,
+      please contact us using the information below.
+    </p>
+
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:khairiahalayyafi@gmail.com">khairiahalayyafi@gmail.com</a></p>
+
+    <h3>Developer</h3>
+    <p>Khairiah Alayyafi</p>
+
+    <h3>App Version</h3>
+    <p>1.0</p>
+
+    <h3>Privacy Policy</h3>
+    <p><a class="button" href="privacy.html">View Privacy Policy</a></p>
+  </div>
+</body>
+</html>
